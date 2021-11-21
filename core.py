@@ -15,7 +15,7 @@ class Node:
       self.children.append(Node())
     self.children[0].make_children(current_layer_number+1, node_per_layer_map)
     
-   for i in range (1, len(self.children)):
+   for i in range(1, len(self.children)):
       self.children[i].children = self.children[0].children[:]
    
   def printout(self,current_layer_number,node_per_layer_map)
