@@ -11,7 +11,7 @@ class Node:
   def make_children(self, current_layer_number, node_per_layer_map):
     if current_layer_number >= len(node_per_layer_map):
       return
-    for i in range(node_per_layer_map[current_layer_number}):
+    for i in range(node_per_layer_map[current_layer_number]):
       self.children.append(Node())
     self.children[0].make_children(current_layer_number+1, node_per_layer_map)
     
