@@ -28,5 +28,5 @@ class Node:
           self.children[i].printout(current_layer_number+1,node_per_layer_map)
                                      
                                       
-new_node - Node()
+new_node = Node()
 new_node.make_children(0,NODE_COUNT_PER_LAYER)
