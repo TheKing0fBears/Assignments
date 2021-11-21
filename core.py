@@ -6,7 +6,7 @@ NODE_COUNT_PER_LAYER = [3,3,2]
 class Node:
   def __init__(self):
     self.children = []
-    seld.node_name = ''.join([random.choice(string.ascii_letters) for i in range(3)])
+    self.node_name = ''.join([random.choice(string.ascii_letters) for i in range(3)])
     
   def make_children(self, current_layer_number, node_per_layer_map):
     if current_layer_number >= len(node_per_layer_map):
