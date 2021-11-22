@@ -23,8 +23,9 @@ class Node:
          self.children[i].children = self.children[0].children[:]
    
   def printout(self,current_layer_number,node_per_layer_map):
+      indent = '         ' * current_layer_number
       if current_layer_number >= len(node_per_layer_map):
-         print(f"{self.node_name}")
+         print(f"{indent} {self.node_name}")
          return
       print(f"{self.node_name} is connected to:")
       for i in range(len(self.children)):
