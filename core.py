@@ -6,6 +6,7 @@ NODE_COUNT_PER_LAYER = [4,3,2]
 class Node:
   def __init__(self):
     self.children = []
+    self.weight = []
     self.node_name = ''.join([random.choice(string.ascii_letters) for i in range(3)])
     
   def make_children(self, current_layer_number, node_per_layer_map):
@@ -29,9 +30,22 @@ class Node:
          return
       print(f"{self.node_name} is connected to:")
       for i in range(len(self.children)):
+          try:
+            print(f"{ident} Weight of {self.weight[i]}")
+          except:
+            pass
           self.children[i].printout(current_layer_number+1,node_per_layer_map)
-                                     
-                                      
+          
+  
+  def set_weight(self,current_layer_number,node_per_layer_map):
+     if current_layer_number >= len(node_per_layer_map):
+        return
+     for i in range(len(self.children)):
+        self.weight[i] = random.uniform(0,1) 
+        self.children[i].set_weight(current_layer_number+1,node_per_layer_map)
+    return    
+    
 new_node = Node()
 new_node.make_children(0,NODE_COUNT_PER_LAYER)
+new_node.set_weight(0,NODE_COUNT_PER_LAYER)
 new_node.printout(0,NODE_COUNT_PER_LAYER)
