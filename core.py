@@ -31,7 +31,7 @@ class Node:
       print(f"{self.node_name} is connected to:")
       for i in range(len(self.children)):
           try:
-            print(f"{ident} Weight of {self.weight[i]}")
+            print(f"{indent} Weight of {self.weight[i]}")
           except:
             pass
           self.children[i].printout(current_layer_number+1,node_per_layer_map)
