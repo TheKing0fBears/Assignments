@@ -43,7 +43,7 @@ class Node:
      for i in range(len(self.children)):
         self.weight[i] = random.uniform(0,1) 
         self.children[i].set_weight(current_layer_number+1,node_per_layer_map)
-    return    
+     return    
     
 new_node = Node()
 new_node.make_children(0,NODE_COUNT_PER_LAYER)
